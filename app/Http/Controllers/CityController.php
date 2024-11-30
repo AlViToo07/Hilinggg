@@ -14,10 +14,10 @@ class CityController extends Controller
         return view('cities.index', compact('cities')); // Mengirim data ke view  
     }  
 
-    public function show($id)  
+    public function show($slug)  
     {  
         // Ambil data city berdasarkan ID  
-        $city = City::find($id);  
+        $city = City::where('slug', $slug)->first();  
 
         // Cek jika city tidak ditemukan  
         if (!$city) {  

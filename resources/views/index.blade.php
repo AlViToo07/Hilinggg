@@ -24,9 +24,11 @@
                         Tak Terlupakan!
                     </p>
                 </div>
-                <a href=""
+                @guest
+                <a href="{{ route('register') }}"
                     class="bg-violet-700  text-white py-2 px-5 rounded-full hover:bg-indigo-950 text-base font-semibold justify-center w-fit text-center text-[15px]">Daftar
                     Sekarang</a>
+                @endguest
             </div>
             <div class="flex flex-row items-center ujang">
                 <img src="{{ asset('img/kana.png') }}" class="w-96" alt="">

@@ -5,7 +5,7 @@
         <div class="grid grid-cols-4 gap-x-8 gap-y-10 justify-center mt-10">
             <x-city_card>
                 <x-slot name=link>
-                    {{ route('city', 1) }}
+                    {{ route('city', 'jogjakarta') }}
                 </x-slot>
                 <x-slot name=img>
                     {{ asset('img/tugu.jpg') }}
@@ -21,7 +21,7 @@
             
             <x-city_card>
                 <x-slot name=link>
-                    {{ route('city', 2) }}
+                    {{ route('city', 'magelang') }}
                 </x-slot>
                 <x-slot name=img>
                     {{ asset('img/borobudur.webp') }}
