@@ -10,7 +10,6 @@
 
     @php
         $images = json_decode($city->images, true); // Mengubah JSON menjadi array
-        $image1 = $images['image1'] ?? ''; // Mengambil image1
     @endphp
 
     <h1 class="mx-auto max-w-6xl font-['Playfair_Display'] text-5xl mb-5">{{ $city->name }}</h1>
@@ -23,10 +22,10 @@
             </div>
             <div class="flex flex-col gap-y-8 ujang justify-center">
                 <div class="flex gap-y-2 flex-col">
-                    <img src="{{ asset('img/tugu.jpg') }}" width="310px" class="rounded-xl" alt="">
+                    <img src="{{ asset('img/' . $images['2']) }}" width="310px" class="rounded-xl" alt="">
                 </div>
                 <div class="flex gap-y-2 flex-col">
-                    <img src="{{ asset('img/tugu.jpg') }}" width="310px" class="rounded-xl" alt="">
+                    <img src="{{ asset('img/' . $images['3']) }}" width="310px" class="rounded-xl" alt="">
                 </div>
             </div>
         </div>
@@ -40,6 +39,9 @@
             <div class="overflow-hidden relative">
                 <div class="carousel-slide flex transition-transform duration-500 ease-in-out" id="carouselSlides">
                     @foreach ($destinations as $destination)
+                    @php
+                            $preview = json_decode($destination->images, true); // Mengubah JSON menjadi array
+                        @endphp
                         <div class="w-full flex-none flex justify-center items-center">
                             <section id="city">
                                 <div class="max-w-6xl mx-auto py-12 items-cente mt-10 content-center bg-white rounded-3xl">
@@ -278,7 +280,7 @@
                                             </div>
                                         </div>
                                         <div class="my-card flex flex-col gap-y-5  items-center">
-                                            <img src="{{ asset('img/tugu.jpg') }}" class="w-96 rounded-2xl ujang"
+                                            <img src="{{ asset('img/' . $preview['1']) }}" class="w-96 rounded-2xl ujang"
                                                 alt="">
                                             <div class="">
                                                 <h1
